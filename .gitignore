@@ -33,3 +33,6 @@ build/
 
 # JRebel config
 rebel.xml
+
+# others
+tdbg_*
