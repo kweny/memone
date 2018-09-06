@@ -16,7 +16,12 @@
 
 package org.apenk.memone.controller;
 
+import org.apenk.memone.common.BaseController;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.servlet.ModelAndView;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 /**
  * TODO Kweny IndexController
@@ -25,5 +30,9 @@ import org.springframework.stereotype.Controller;
  * @since TODO version
  */
 @Controller("indexController")
-public class IndexController {
+public class IndexController extends BaseController {
+
+    public ModelAndView index(HttpServletRequest request, HttpServletResponse response) {
+        return MV("index.html");
+    }
 }
