@@ -20,7 +20,7 @@ package org.apenk.memone.application.i18n;
  * TODO Kweny MessageResult
  *
  * @author Kweny
- * @since 0.0.01
+ * @since 0.0.1
  */
 public class MessageResult {
 }
