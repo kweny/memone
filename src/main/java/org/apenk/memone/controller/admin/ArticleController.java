@@ -14,27 +14,13 @@
  * limitations under the License.
  */
 
-package org.apenk.memone.controller;
-
-import org.apenk.memone.common.BaseController;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.servlet.ModelAndView;
-
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+package org.apenk.memone.controller.admin;
 
 /**
- * TODO Kweny IndexController
+ * TODO Kweny ArticleController
  *
  * @author Kweny
  * @since TODO version
  */
-@Controller("indexController")
-public class IndexController extends BaseController {
-
-    @GetMapping(value = {"/", "index"})
-    public ModelAndView index(HttpServletRequest request, HttpServletResponse response) {
-        return MV("index.html");
-    }
+public class ArticleController {
 }

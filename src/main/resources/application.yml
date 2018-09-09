@@ -18,3 +18,10 @@ spring:
     encoding: UTF-8
     servlet:
       content-type: text/html
+
+  messages:
+    basename: i18n/messages
+
+  data:
+    mongodb:
+      uri: mongodb://memone:OpenSesame!@192.168.1.241:27017/memone
