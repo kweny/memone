@@ -39,6 +39,6 @@ public class AuthenticationService implements UserDetailsService {
         if (StringUtils.isEmpty(username)) {
             throw new UsernameNotFoundException("Username is empty.");
         }
-        return new MemoneUser("memone", "password123", Collections.singletonList(new SimpleGrantedAuthority("ROLE_ADMIN")));
+        return new MemoneUser("memone", "{noop}password123", Collections.singletonList(new SimpleGrantedAuthority("ROLE_ADMIN")));
     }
 }
