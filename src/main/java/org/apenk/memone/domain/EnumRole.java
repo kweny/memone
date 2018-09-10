@@ -14,22 +14,23 @@
  * limitations under the License.
  */
 
-package org.apenk.memone.application.config;
-
-import org.springframework.context.annotation.Configuration;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+package org.apenk.memone.domain;
 
 /**
- * TODO Kweny MemoneWebConfigurer
+ * TODO Kweny EnumRole
  *
  * @author Kweny
- * @since 0.0.1
+ * @since TODO version
  */
-@Configuration("webConfigurer")
-public class MemoneWebConfigurer implements WebMvcConfigurer {
+public enum EnumRole {
 
-//    @Override
-//    public void addViewControllers(ViewControllerRegistry registry) {
-//        registry.addViewController("/login").setViewName("/templates/login/");
-//    }
+    ADMIN, EDITOR, AUTHOR, CONTRIBUTOR, SUBSCRIBER,
+
+    ;
+
+    public static final String[] ALL_ROLES = {ADMIN.name(), EDITOR.name(), AUTHOR.name(), CONTRIBUTOR.name(), SUBSCRIBER.name()};
+
+    public static final String [] ADMIN_ROLES = {ADMIN.name(), EDITOR.name(), AUTHOR.name(), CONTRIBUTOR.name()};
+
+    public static final String[] USER_ROLES = {SUBSCRIBER.name()};
 }

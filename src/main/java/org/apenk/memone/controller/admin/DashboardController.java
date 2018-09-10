@@ -16,11 +16,29 @@
 
 package org.apenk.memone.controller.admin;
 
+import org.apenk.memone.common.BaseController;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 /**
  * TODO Kweny DashboardController
  *
  * @author Kweny
  * @since TODO version
  */
-public class DashboardController {
+@Controller("dashboardController")
+@RequestMapping(value = "admin")
+public class DashboardController extends BaseController {
+
+    @PreAuthorize("hasRole('ADMIN')")
+    @GetMapping(value = {"/", "dashboard"})
+    public ModelAndView dashboard(HttpServletRequest request, HttpServletResponse response) {
+        return MV("admin/dashboard.html");
+    }
 }

@@ -16,13 +16,17 @@
 
 package org.apenk.memone.application.config;
 
+import org.apenk.memone.service.AuthenticationService;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.crypto.factory.PasswordEncoderFactories;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 /**
  * TODO Kweny MemoneSecurityConfigurer
@@ -30,26 +34,36 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
  * @author Kweny
  * @since TODO version
  */
-@Configuration
+@Configuration("securityConfigurer")
 @EnableWebSecurity
-@EnableGlobalMethodSecurity(prePostEnabled = true, securedEnabled = true, jsr250Enabled = true)
+@EnableGlobalMethodSecurity(prePostEnabled = true)
 public class MemoneSecurityConfigurer extends WebSecurityConfigurerAdapter {
+
+    private static final String LOGIN_URL = "/login";
+    private static final String ADMIN_URL = "/admin/**";
+    private static final String[] ADMIN_ROLES = {"ADMIN", "EDITOR", "AUTHOR", "CONTRIBUTOR"};
+
     @Override
-    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-//        super.configure(auth);
-        auth.inMemoryAuthentication()
-                .withUser("root")
-                .password("root")
-                .roles("USER");
+    public UserDetailsService userDetailsService() {
+        return getApplicationContext().getBean("authenticationService", AuthenticationService.class);
     }
 
     @Override
-    public void configure(WebSecurity web) throws Exception {
-        super.configure(web);
+    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+        auth.userDetailsService(userDetailsService());
     }
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        super.configure(http);
+        http.formLogin()
+                .loginPage(LOGIN_URL).permitAll()
+            .and().authorizeRequests()
+                .antMatchers(ADMIN_URL).hasAnyRole(ADMIN_ROLES)
+                .anyRequest().permitAll();
+    }
+
+    @Bean("passwordEncoder")
+    public static PasswordEncoder passwordEncoder() {
+        return PasswordEncoderFactories.createDelegatingPasswordEncoder();
     }
 }
