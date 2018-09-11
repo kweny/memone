@@ -14,25 +14,27 @@
  * limitations under the License.
  */
 
-package org.apenk.memone;
+package org.apenk.memone.application.autoconfig;
 
-import org.apenk.memone.application.autoconfig.EnableMongoCarefree;
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.beans.factory.annotation.Value;
 
 /**
- * TODO Kweny MemoneApplication
+ * TODO Kweny MongoConfiguration
  *
  * @author Kweny
- * @since 0.0.1
+ * @since TODO version
  */
-@EnableMongoCarefree()
-@SpringBootApplication
-public class MemoneApplication {
+public class MongoConfiguration {
 
-    public static void main(String[] args) {
-        SpringApplication application = new SpringApplication(MemoneApplication.class);
+    @Value("${username}")
+    private String username;
 
-        application.run(args);
+    public String getUsername() {
+        return username;
+    }
+
+    @Value("username")
+    public void setUsername(String username) {
+        this.username = username;
     }
 }
