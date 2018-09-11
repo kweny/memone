@@ -42,7 +42,9 @@ import java.lang.annotation.*;
 @Import({MongoCarefreeImportSelector.class})
 public @interface EnableMongoCarefree {
 
-    String ENABLED_OVERRIDE_PROPERTY = "carefree.mongodb.enableautoconfiguration";
+    String ENABLED_OVERRIDE_PROPERTY = "carefree.mongodb.enable";
+
+    String[] sources() default {};
 
     String prefix() default "carefree.mongodb";
 }

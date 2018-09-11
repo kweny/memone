@@ -29,10 +29,10 @@ import org.springframework.security.crypto.factory.PasswordEncoderFactories;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 /**
- * TODO Kweny MemoneSecurityConfigurer
+ * spring security configurer
  *
  * @author Kweny
- * @since TODO version
+ * @since 0.0.1
  */
 @Configuration("securityConfigurer")
 @EnableWebSecurity

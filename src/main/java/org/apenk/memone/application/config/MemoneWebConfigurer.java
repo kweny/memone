@@ -20,7 +20,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 /**
- * TODO Kweny MemoneWebConfigurer
+ * web mvc configurer
  *
  * @author Kweny
  * @since 0.0.1
