@@ -39,7 +39,7 @@ import java.lang.annotation.*;
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
 @Inherited
-@Import({MongoCarefreeImportSelector.class})
+@Import({MongoCarefreeConfigurer.class})
 public @interface EnableMongoCarefree {
 
     String ENABLED_OVERRIDE_PROPERTY = "carefree.mongodb.enable";

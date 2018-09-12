@@ -25,6 +25,7 @@ repositories {
 configurations {
     compile.exclude module: 'spring-boot-starter-tomcat'
     compile.exclude module: 'spring-boot-starter-logging'
+//    compile.exclude module: 'mongodb-dirver'
 }
 
 dependencies {
@@ -36,6 +37,7 @@ dependencies {
     compile group: 'org.springframework.boot', name: 'spring-boot-starter-thymeleaf', version: '2.0.4.RELEASE'
     compile group: 'org.springframework.boot', name: 'spring-boot-starter-security', version: '2.0.4.RELEASE'
     compile group: 'org.springframework.boot', name: 'spring-boot-starter-data-mongodb', version: '2.0.4.RELEASE'
+    compile group: 'org.mongodb', name: 'mongodb-driver', version: '3.8.1'
 
     compile group: 'org.springframework.boot', name: 'spring-boot-autoconfigure', version: '2.0.4.RELEASE'
 }

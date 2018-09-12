@@ -16,25 +16,26 @@
 
 package org.apenk.memone.application.autoconfig;
 
-import org.springframework.beans.factory.annotation.Value;
+import org.springframework.beans.BeansException;
+import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
+import org.springframework.beans.factory.support.BeanDefinitionRegistry;
+import org.springframework.beans.factory.support.BeanDefinitionRegistryPostProcessor;
 
 /**
- * TODO Kweny MongoConfiguration
+ * TODO Kweny MongoCarefreeConfigurer
  *
  * @author Kweny
  * @since TODO version
  */
-public class MongoConfiguration {
+public class MongoCarefreeConfigurer extends MongoCarefreeImportSelector implements BeanDefinitionRegistryPostProcessor {
 
-    @Value("${username}")
-    private String username;
+    @Override
+    public void postProcessBeanDefinitionRegistry(BeanDefinitionRegistry registry) throws BeansException {
 
-    public String getUsername() {
-        return username;
     }
 
-    @Value("username")
-    public void setUsername(String username) {
-        this.username = username;
+    @Override
+    public void postProcessBeanFactory(ConfigurableListableBeanFactory beanFactory) throws BeansException {
+
     }
 }

@@ -31,7 +31,7 @@ import org.springframework.util.ClassUtils;
  * @author Kweny
  * @since TODO version
  */
-public class MongoCarefreeImportSelector implements ImportSelector, EnvironmentAware, Ordered {
+class MongoCarefreeImportSelector implements ImportSelector, EnvironmentAware, Ordered {
 
     private static final String[] NO_IMPORTS = {};
 
@@ -85,4 +85,5 @@ public class MongoCarefreeImportSelector implements ImportSelector, EnvironmentA
     public int getOrder() {
         return Ordered.LOWEST_PRECEDENCE - 1;
     }
+
 }
