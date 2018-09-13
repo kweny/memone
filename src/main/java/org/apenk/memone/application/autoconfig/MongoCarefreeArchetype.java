@@ -39,9 +39,9 @@ class MongoCarefreeArchetype {
     private Integer maxWaitTime;
     private Integer minConnectionsPerHost;
     private Integer maxConnectionsPerHost;
-    private Integer threadsAllowedToBlockForConnectionMultiplier;
     private Integer maxConnectionIdleTime;
     private Integer maxConnectionLifeTime;
+    private Integer threadsAllowedToBlockForConnectionMultiplier;
 
     private Integer heartbeatFrequency;
     private Integer minHeartbeatFrequency;
