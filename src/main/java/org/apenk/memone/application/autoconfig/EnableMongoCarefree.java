@@ -21,6 +21,7 @@ import org.springframework.context.annotation.Import;
 import java.lang.annotation.*;
 
 /**
+ * <p>
  * 启用 MongoDB 自动配置的注解，添加到应用程序主类上——
  * <pre>
  *    {@code @EnableMongoCarefree}
@@ -31,6 +32,18 @@ import java.lang.annotation.*;
  *         }
  *     }
  * </pre>
+ * </p>
+ *
+ * <p>
+ *     可以指定属性名的前缀：
+ *     {@code @EnableMongoCarefree("mongodb.custom.prefix")}。
+ *     默认为 {@code carefree.mongodb}。
+ * </p>
+ *
+ * <p>
+ *     另外前缀中可以使用占位符：
+ *     {@code @EnableMongoCarefree("mongodb.${placeholder}.prefix")}
+ * </p>
  *
  * @author Kweny
  * @since 1.0.0
@@ -43,8 +56,6 @@ import java.lang.annotation.*;
 public @interface EnableMongoCarefree {
 
     String ENABLED_OVERRIDE_PROPERTY = "carefree.mongodb.enable";
-
-    String[] sources() default {};
 
     String prefix() default "carefree.mongodb";
 }

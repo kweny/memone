@@ -14,25 +14,16 @@
  * limitations under the License.
  */
 
-package org.apenk.memone;
-
-import org.apenk.memone.application.autoconfig.EnableMongoCarefree;
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+package org.apenk.memone.application.autoconfig;
 
 /**
- * TODO Kweny MemoneApplication
+ * 配置加载监听器
  *
  * @author Kweny
- * @since 0.0.1
+ * @since TODO version
  */
-@EnableMongoCarefree(prefix = "${test.prefix}")
-@SpringBootApplication
-public class MemoneApplication {
+public interface MongoCarefreeOptionedListener {
 
-    public static void main(String[] args) {
-        SpringApplication application = new SpringApplication(MemoneApplication.class);
+    void optionCreated(MongoCarefreeOption option);
 
-        application.run(args);
-    }
 }
