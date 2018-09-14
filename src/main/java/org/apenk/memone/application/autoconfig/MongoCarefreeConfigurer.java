@@ -16,6 +16,7 @@
 
 package org.apenk.memone.application.autoconfig;
 
+import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.support.BeanDefinitionRegistry;
 import org.springframework.boot.context.properties.bind.BindResult;
 import org.springframework.boot.context.properties.bind.Bindable;
@@ -24,6 +25,8 @@ import org.springframework.boot.context.properties.source.ConfigurationPropertyN
 import org.springframework.boot.context.properties.source.ConfigurationPropertySource;
 import org.springframework.boot.context.properties.source.ConfigurationPropertySources;
 import org.springframework.boot.context.properties.source.IterableConfigurationPropertySource;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.ApplicationContextAware;
 import org.springframework.context.EnvironmentAware;
 import org.springframework.context.annotation.ImportBeanDefinitionRegistrar;
 import org.springframework.core.annotation.AnnotationAttributes;
@@ -41,7 +44,7 @@ import java.util.Map;
  * @author Kweny
  * @since 1.0.0
  */
-public class MongoCarefreeConfigurer implements ImportBeanDefinitionRegistrar, EnvironmentAware {
+public class MongoCarefreeConfigurer implements ImportBeanDefinitionRegistrar, EnvironmentAware, ApplicationContextAware {
 
     private static final String DEFAULT_MONGO_TEMPLATE_NAME = "mongoTemplate";
 
@@ -74,6 +77,8 @@ public class MongoCarefreeConfigurer implements ImportBeanDefinitionRegistrar, E
         archetypes.forEach((templateName, archetype) -> {
 
         });
+
+        System.out.println("registerBeanDefinitions");
     }
 
     private MongoCarefreeOption createMongoCarefreeOption(MongoCarefreeArchetype archetype) {
@@ -169,4 +174,8 @@ public class MongoCarefreeConfigurer implements ImportBeanDefinitionRegistrar, E
         this.environment = environment;
     }
 
+    @Override
+    public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
+        System.out.println(applicationContext);
+    }
 }
