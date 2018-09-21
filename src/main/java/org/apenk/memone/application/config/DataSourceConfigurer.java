@@ -19,7 +19,6 @@ package org.apenk.memone.application.config;
 import com.mongodb.MongoClient;
 import com.mongodb.MongoClientOptions;
 import com.mongodb.ServerAddress;
-import org.apenk.memone.application.autoconfig.EnableMongoCarefree;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.data.mongodb.MongoDbFactory;
@@ -35,7 +34,6 @@ import java.util.List;
  * @since TODO version
  */
 //@Configuration("dataSourceConfigurer")
-@EnableMongoCarefree
 public class DataSourceConfigurer {
 
     private final DataSourceProperties dataSourceProperties;

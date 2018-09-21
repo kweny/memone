@@ -16,7 +16,7 @@
 
 package org.apenk.memone;
 
-import org.apenk.memone.application.autoconfig.EnableMongoCarefree;
+import org.kweny.carefree.mongodb.EnableMongoCarefree;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -26,7 +26,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @author Kweny
  * @since 0.0.1
  */
-@EnableMongoCarefree(prefix = "${test.prefix}")
+@EnableMongoCarefree
 @SpringBootApplication
 public class MemoneApplication {
 
