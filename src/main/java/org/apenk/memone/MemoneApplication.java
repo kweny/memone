@@ -19,6 +19,8 @@ package org.apenk.memone;
 import org.kweny.carefree.mongodb.EnableMongoCarefree;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.data.mongo.MongoDataAutoConfiguration;
+import org.springframework.boot.autoconfigure.mongo.MongoAutoConfiguration;
 
 /**
  * TODO Kweny MemoneApplication
@@ -27,7 +29,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @since 0.0.1
  */
 @EnableMongoCarefree
-@SpringBootApplication
+@SpringBootApplication(exclude = {MongoAutoConfiguration.class, MongoDataAutoConfiguration.class})
 public class MemoneApplication {
 
     public static void main(String[] args) {

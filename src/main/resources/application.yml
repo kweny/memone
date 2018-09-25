@@ -1,7 +1,4 @@
 
-test:
-  prefix: carefree.mongodb
-
 server:
   port: 8089
 

@@ -33,6 +33,7 @@ build/
 
 # JRebel config
 rebel.xml
+rebel-remote.xml
 
 # others
 tdbg_*

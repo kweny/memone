@@ -47,6 +47,8 @@ public class IndexController extends BaseController {
 
     @GetMapping(value = {"/", "index"})
     public ModelAndView index(HttpServletRequest request, HttpServletResponse response) {
+        System.out.println("aaddd");
+        System.out.println("aaddddd");
         return MV("index.html");
     }
 

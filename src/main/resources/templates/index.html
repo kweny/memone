@@ -11,13 +11,13 @@
     <link rel="stylesheet" th:href="@{css/bootstrap.min.css}">
 </head>
 <body>
-    <header th:include="_header :: header"></header>
+    <div th:replace="_header :: header"></div>
 
     <div>
-        content
+        contentss
     </div>
 
-    <header th:include="_footer :: footer"></header>
+    <footer th:include="_footer :: footer"></footer>
 
     <script th:src="@{js/bootstrap.min.js}"></script>
     <script th:src="@{js/vue.min.js}"></script>
