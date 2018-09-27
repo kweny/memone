@@ -22,110 +22,32 @@ body {
     line-height: 1.4em;
     min-width: 600px;
 }
+/*
 
-ul {
-    list-style: none;
+body > .el-container {
+    margin-bottom: 40px;
+}
+*/
+
+
+.el-header, .el-footer {
+    background-color: #B3C0D1;
+    color: #333;
+    text-align: center;
+    line-height: 60px;
 }
 
-ol, ul {
-    padding: 0;
+.el-aside {
+    background-color: #D3DCE6;
+    color: #333;
+    text-align: center;
+    line-height: 200px;
 }
 
-ul, menu, dir {
-    display: block;
-    list-style-type: disc;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-    padding-inline-start: 40px;
+.el-main {
+    background-color: #E9EEF3;
+    color: #333;
+    text-align: center;
+    line-height: 160px;
 }
 
-dd, li {
-    margin-bottom: 6px;
-}
-
-li {
-    display: list-item;
-    text-align: -webkit-match-parent;
-}
-
-#mem-wrap {
-    height: auto;
-    min-height: 100%;
-    width: 100%;
-    position: relative;
-    -webkit-font-smoothing: subpixel-antialiased;
-}
-
-#mem-menu-main {
-
-}
-
-#mem-toolbar {
-    direction: ltr;
-    color: #ccc;
-    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
-    height: 32px;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    min-width: 600px;
-    z-index: 99999;
-    background: #23282d;
-}
-
-#mem-menu-background #mem-menu-wrap #mem-menu .mem-submenu {
-    width: 160px;
-    background-color: #23282d;
-}
-
-#mem-menu-background {
-    position: fixed;
-    top: 0;
-    bottom: -120px;
-    z-index: 1;
-}
-
-#mem-menu-wrap {
-    position: fixed;
-    float: left;
-    z-index: 9990;
-}
-
-#mem-menu {
-    clear: left;
-    margin: 12px 0;
-    padding: 0;
-    list-style: none;
-}
-
-#mem-menu li.menu-top {
-    border: none;
-    min-height: 34px;
-    position: relative;
-}
-
-#mem-menu li {
-    margin: 0;
-    padding: 0;
-    cursor: pointer;
-}
-
-#mem-menu * {
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-}
-
-#mem-menu .mem-has-current-submenu .mem-submenu .mem-submenu-head,
-#mem-menu .mem-menu-arrow,
-#mem-menu .mem-menu-arrow div,
-#mem-menu li.current a.menu-top,
-#mem-menu li.mem-has-current-submenu a.mem-has-current-submenu,
-.folded #mem-menu li.current.menu-top, .folded #mem-menu li.mem-has-current-submenu {
-    background: #0073aa;
-    color: #fff;
-}
