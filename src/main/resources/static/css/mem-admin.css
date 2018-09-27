@@ -41,12 +41,25 @@ ul, menu, dir {
     padding-inline-start: 40px;
 }
 
+dd, li {
+    margin-bottom: 6px;
+}
+
+li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+}
+
 #mem-wrap {
     height: auto;
     min-height: 100%;
     width: 100%;
     position: relative;
     -webkit-font-smoothing: subpixel-antialiased;
+}
+
+#mem-menu-main {
+
 }
 
 #mem-toolbar {
@@ -86,4 +99,33 @@ ul, menu, dir {
     margin: 12px 0;
     padding: 0;
     list-style: none;
+}
+
+#mem-menu li.menu-top {
+    border: none;
+    min-height: 34px;
+    position: relative;
+}
+
+#mem-menu li {
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+}
+
+#mem-menu * {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+#mem-menu .mem-has-current-submenu .mem-submenu .mem-submenu-head,
+#mem-menu .mem-menu-arrow,
+#mem-menu .mem-menu-arrow div,
+#mem-menu li.current a.menu-top,
+#mem-menu li.mem-has-current-submenu a.mem-has-current-submenu,
+.folded #mem-menu li.current.menu-top, .folded #mem-menu li.mem-has-current-submenu {
+    background: #0073aa;
+    color: #fff;
 }

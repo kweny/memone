@@ -24,11 +24,11 @@ package org.apenk.memone.domain;
  */
 public enum EnumRole {
 
-    ADMIN, EDITOR, AUTHOR, CONTRIBUTOR, SUBSCRIBER,
+    ADMIN, EDITOR, AUTHOR, CONTRIBUTOR, SUBSCRIBER, VISITOR,
 
     ;
 
-    public static final String[] ALL_ROLES = {ADMIN.name(), EDITOR.name(), AUTHOR.name(), CONTRIBUTOR.name(), SUBSCRIBER.name()};
+    public static final String[] ALL_ROLES = {ADMIN.name(), EDITOR.name(), AUTHOR.name(), CONTRIBUTOR.name(), SUBSCRIBER.name(), VISITOR.name()};
 
     public static final String [] ADMIN_ROLES = {ADMIN.name(), EDITOR.name(), AUTHOR.name(), CONTRIBUTOR.name()};
 

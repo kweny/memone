@@ -17,6 +17,7 @@
 package org.apenk.memone.controller.admin;
 
 import org.apenk.memone.common.BaseController;
+import org.apenk.memone.domain.MemoneUser;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -39,6 +40,7 @@ public class DashboardController extends BaseController {
     @PreAuthorize("hasRole('ADMIN')")
     @GetMapping(value = {"/", "dashboard"})
     public ModelAndView dashboard(HttpServletRequest request, HttpServletResponse response) {
-        return MV("admin/dashboard.html");
+        MemoneUser user = new MemoneUser("testUser", "password");
+        return MV("admin/dashboard.html", "user", user);
     }
 }

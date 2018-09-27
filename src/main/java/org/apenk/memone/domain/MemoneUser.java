@@ -17,9 +17,11 @@
 package org.apenk.memone.domain;
 
 import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.User;
 
 import java.util.Collection;
+import java.util.Collections;
 
 /**
  * TODO Kweny MemoneUser
@@ -32,6 +34,10 @@ public class MemoneUser extends User {
 
     private String nickname;
     private String email;
+
+    public MemoneUser(String username, String password) {
+        super(username, password, Collections.singletonList(new SimpleGrantedAuthority("ROLE_VISITOR")));
+    }
 
     public MemoneUser(String username, String password, Collection<? extends GrantedAuthority> authorities) {
         super(username, password, authorities);
