@@ -41,6 +41,16 @@ public class DashboardController extends BaseController {
     @GetMapping(value = {"/", "dashboard"})
     public ModelAndView dashboard(HttpServletRequest request, HttpServletResponse response) {
         MemoneUser user = new MemoneUser("testUser", "password");
-        return MV("admin/dashboard.html", "user", user);
+        return MV("admin/dashboard", "user", user);
+    }
+
+    @GetMapping(value = "article-list")
+    public ModelAndView listArticle(HttpServletRequest request, HttpServletResponse response) {
+        return MV("admin/article-list");
+    }
+
+    @GetMapping(value = "article-post")
+    public ModelAndView postArticle(HttpServletRequest request, HttpServletResponse response) {
+        return MV("admin/article-post");
     }
 }

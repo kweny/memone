@@ -15,17 +15,19 @@
     limitations under the License.
  */-->
 
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head>
     <!--/*@thymesVar id="title" type="java.lang.String"*/-->
     <title th:text="${title}"></title>
     <meta charset="UTF-8">
+    <!--/*@thymesVar id="X-PJAX-Version" type="java.lang.String"*/-->
+    <meta http-equiv="x-pjax-version" th:content="v123">
     <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
     <meta name="renderer" content="webkit">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="keywords" content="">
-    <link rel="stylesheet" th:href="@{../css/element-ui.min.css}">
+    <link rel="stylesheet" th:href="@{../css/nprogress.css}">
     <link rel="stylesheet" th:href="@{../css/mem-admin.css}">
     <style>
 
@@ -33,38 +35,23 @@
 </head>
 <body>
 
-<div id="app">
-    <el-container>
-        <el-header>
-            header
-        </el-header>
-        <el-container>
-            <el-aside>
-                aside
-            </el-aside>
-            <el-main>
-                main
-            </el-main>
-        </el-container>
-    </el-container>
+<div id="memone">
+    <div>
+        <a data-pjax th:href="@{dashboard}">dashboard</a>
+        <a data-pjax th:href="@{article-list}">article-list</a>
+        <a data-pjax th:href="@{article-post}">article-post</a>
+    </div>
+    <div id="testDiv"></div>
+    <div id="container" th:include="::content"></div>
 </div>
 
-<script th:src="@{../js/vue.min.js}"></script>
-<script th:src="@{../js/element-ui.min.js}"></script>
+<script th:src="@{../js/jquery.js}"></script>
+<script th:src="@{../js/jquery.pjax.js}"></script>
+<script th:src="@{../js/nprogress.js}"></script>
 <script>
-    new Vue({
-        el: '#app',
-        data() {
-            return {
-                currentDate: new Date()
-            };
-        },
-        methods: {
-            next: function (step) {
-            }
-        }
-    })
+    $(document).pjax('[data-pjax] a, a[data-pjax]', '#container', {fragment: '#container'})
 
+    document.getElementById('testDiv').innerText = Math.random() + '';
 </script>
 </body>
 </html>
