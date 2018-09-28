@@ -21,7 +21,7 @@
     <title th:text="${title}"></title>
     <meta charset="UTF-8">
     <!--/*@thymesVar id="X-PJAX-Version" type="java.lang.String"*/-->
-    <meta http-equiv="x-pjax-version" th:content="v123">
+    <!--<meta http-equiv="x-pjax-version" th:content="v123">-->
     <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
     <meta name="renderer" content="webkit">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -34,6 +34,12 @@
     </style>
 </head>
 <body>
+
+<div id="mem-wrapper">
+    <div id="mem-header"></div>
+    <div id="mem-aside"></div>
+    <div id="mem-content"></div>
+</div>
 
 <div id="memone">
     <div>
