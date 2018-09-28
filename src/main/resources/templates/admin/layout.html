@@ -27,6 +27,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="keywords" content="">
+    <link rel="stylesheet" th:href="@{../css/bootstrap.css}">
     <link rel="stylesheet" th:href="@{../css/nprogress.css}">
     <link rel="stylesheet" th:href="@{../css/mem-admin.css}">
     <style>
@@ -35,10 +36,13 @@
 </head>
 <body>
 
-<div id="mem-wrapper">
-    <div id="mem-header"></div>
-    <div id="mem-aside"></div>
-    <div id="mem-content"></div>
+<div id="mem-wrapper" class="container-fluid">
+    <div id="mem-header" class="row">header</div>
+    <div id="mem-body" class="row">
+        <div id="mem-aside" class="col-md-2">aside</div>
+        <div id="mem-content" class="col-md-10">content</div>
+    </div>
+
 </div>
 
 <div id="memone">
@@ -53,6 +57,7 @@
 
 <script th:src="@{../js/jquery.js}"></script>
 <script th:src="@{../js/jquery.pjax.js}"></script>
+<script th:src="@{../js/bootstrap.js}"></script>
 <script th:src="@{../js/nprogress.js}"></script>
 <script>
     $(document).pjax('[data-pjax] a, a[data-pjax]', '#container', {fragment: '#container'})
