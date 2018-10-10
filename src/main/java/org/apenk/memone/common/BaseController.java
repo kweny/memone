@@ -29,6 +29,8 @@ import java.util.Map;
  */
 public abstract class BaseController {
 
+    public static String templateName = "memone";
+
     protected ModelAndView MV() {
         return new ModelAndView();
     }
@@ -55,5 +57,21 @@ public abstract class BaseController {
 
     protected ModelAndView MV(View view, String modelName, Object modelValue) {
         return new ModelAndView(view, modelName, modelValue);
+    }
+
+    protected ModelAndView adminMV(String viewName) {
+        return new ModelAndView(getTemplateViewName(viewName));
+    }
+
+    protected ModelAndView adminMV(String viewName, Map<String, ?> model) {
+        return new ModelAndView(getTemplateViewName(viewName), model);
+    }
+
+    protected ModelAndView adminMV(String viewName, String modelName, Object modelValue) {
+        return new ModelAndView(getTemplateViewName(viewName), modelName, modelValue);
+    }
+
+    private String getTemplateViewName(String viewName) {
+        return templateName + "/" + viewName;
     }
 }

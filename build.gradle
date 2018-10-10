@@ -25,7 +25,6 @@ repositories {
 configurations {
     compile.exclude module: 'spring-boot-starter-tomcat'
     compile.exclude module: 'spring-boot-starter-logging'
-//    compile.exclude module: 'mongodb-dirver'
 }
 
 dependencies {

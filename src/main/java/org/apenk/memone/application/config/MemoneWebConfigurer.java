@@ -32,7 +32,7 @@ public class MemoneWebConfigurer implements WebMvcConfigurer {
 
 //    @Override
 //    public void addViewControllers(ViewControllerRegistry registry) {
-//        registry.addViewController("/login").setViewName("/templates/login/");
+//        registry.addViewController("/login").setViewName("/template/login/");
 //    }
 
 

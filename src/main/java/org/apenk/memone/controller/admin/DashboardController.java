@@ -22,6 +22,7 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
@@ -37,20 +38,26 @@ import javax.servlet.http.HttpServletResponse;
 @RequestMapping(value = "admin")
 public class DashboardController extends BaseController {
 
+    @GetMapping(value = "template-name")
+    public ModelAndView templateName(@RequestParam String name) {
+        BaseController.templateName = name;
+        return MV();
+    }
+
     @PreAuthorize("hasRole('ADMIN')")
     @GetMapping(value = {"/", "dashboard"})
     public ModelAndView dashboard(HttpServletRequest request, HttpServletResponse response) {
         MemoneUser user = new MemoneUser("testUser", "password");
-        return MV("admin/dashboard", "user", user);
+        return adminMV("dashboard", "user", user);
     }
 
     @GetMapping(value = "article-list")
     public ModelAndView listArticle(HttpServletRequest request, HttpServletResponse response) {
-        return MV("admin/article-list");
+        return adminMV("article-list");
     }
 
     @GetMapping(value = "article-post")
     public ModelAndView postArticle(HttpServletRequest request, HttpServletResponse response) {
-        return MV("admin/article-post");
+        return adminMV("article-post");
     }
 }
